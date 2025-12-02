@@ -1,0 +1,17 @@
+[[language]]
+name = "python"
+file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt"]
+shebangs = ["python"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json", "requirements.txt", ".venv/"]
+comment-token = "#"
+language-servers = [ "ruff", "ty" ]
+auto-format = true
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.ruff]
+command = "uv"
+args = ["run", "ruff", "server"]
+
+[language-server.ty]
+command = "uv"
+args = ["run", "ty", "server"]
